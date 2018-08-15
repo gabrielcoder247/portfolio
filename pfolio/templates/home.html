@@ -1,0 +1,110 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% load staticfiles %} 
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="banner">
+        <div class="text-block" > 
+            <h2 style="color: white">Wanjiru Nganga</h2>
+                <p style="color: white">
+                        A result-driven professional with aspiring progressive career.
+                         I am self-driven, ambitious, innovative, analytical, a fast learner,
+                        and pride myself as a true team player with good interpersonal skills.
+                         I strongly believe in honesty and integrity and I am very reliable. </p>
+              </div>
+</div>
+<hr>
+<hr>
+<div class="container wrap">
+        <h2 style="color:#056b5b";>Projects </h2>
+        <div class="row" id="final">
+        {% for item in projects %}
+             <div class="col-md-4">
+                     <div class="portfolio-wrap ">
+                         <div class="portfolio-wrap hovereffect">
+                             <a class="img-overlay" data-toggle="modal" data-target="#{{item.id}}" style="width:100%">
+                                 <img src="{{item.image.url}}"  class="image" alt="Image" >
+                                 <div class="overlay">
+                                     <h4>{{item.title}}</h4>
+                                 </div>
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+        {% endfor %}
+        </div>
+            {% for item in projects %}
+            <div class="modal fade" id="{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        <div class="container">
+                            <div class="row text-center">
+                                <div class="col-md-9 col-lg-9">
+                                    <a href=""><img id="img{{item.id}}" src="{{item.image.url}}" class="img-thumbnail" alt="Image" style="width: 50vh">
+                                        <p>{{item.description}}</p>
+                                        <p><a href="https://github.com/wanjiiru/TechBryte">iLve Site</a> </p>
+                                        <a href="https://github.com/wanjiiru/TechBryte">View on GitHub</a>
+
+    
+                                </div>
+    
+                                <div class="row text-center">
+                                </div>
+    
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <hr>
+   
+
+</div>
+        <div class="cotainer m-0 portfolio-details" id="skills">
+        <div class="row">
+            <div class="col-md-12 section-heading">
+                <h1 class="text-center">Skills</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 images-details">
+                <img src="{% static 'images/python.png' %}" alt="python">
+            </div>
+            <div class="col-md-6 images-details">
+                <img src="{% static 'images/angular-card.png' %}" alt="angula">
+            </div>
+            <div class="col-md-6 images-details">
+                <img src="{% static 'images/django.png' %}" alt="django">
+            </div>
+            <div class="col-md-6 images-details">
+                <img src="{% static 'images/flask.png' %}" alt="flask">
+            </div>
+            <div class="col-md-6 images-details">
+                <img src="{% static 'images/javascript.jpg' %}" alt="javascript">
+            </div>
+        </div>
+<hr>
+
+<!-- <div class="container m-0 portfolio-details" id="contact"> -->
+    <div class="row">
+        <div class="col-md-12 section-heading">
+            <h1 class="text-center">Contact</h1>
+        </div>
+    </div>
+</div>
+<footer>
+
+</footer>
+{% endblock %}
