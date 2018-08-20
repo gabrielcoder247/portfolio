@@ -8,6 +8,18 @@ class Project(models.Model):
     image = models.ImageField(upload_to = 'uploads')
     git_url = models.CharField(max_length = 66)
     live_site = models.CharField(max_length=66)
+    techs = (
+        ('python','python'),
+        ('django','django'),
+        ('css','css'),
+        ('html5','htm'),
+        ('flask','flask'),
+        ('geodjango','geodjango'),
+        ('angularjs','angularjs'),
+        ('postgresql','postgresql'),
+    )
+
+    technologies = models.CharField(max_length=255, choices=techs)
 
     def __str__(self):
         return self.title
