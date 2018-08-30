@@ -1,22 +1,105 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% load staticfiles %} 
+{% extends 'base.html' %}
+{% load static %}
 {% load bootstrap4 %}
-
 {% block content %}
-<div class="banner">
-        <div class="text-block" >
-            <h2 style="color: white">Wanjiru Nganga</h2>
-                <p style="color:white;">
-                        A result-driven Full stack software developer with aspiring progressive career.
-                         I am self-driven, ambitious, innovative, analytical, a fast learner,
-                        and pride myself as a true team player with good interpersonal skills.
-                         I strongly believe in honesty and integrity and I am very reliable. </p>
-              </div>
-</div>
-<div class="container wrap" >
-        <h4 style="text-align: center;color:#056b5b;">Projects </h4>
-        <hr>
+
+
+
+  <header class="site-navigation">
+    <div class="nav-container">
+      <div class="nav-brand underline">
+        <a href="home.html">Wanjiru
+          <strong>Nganga</strong>
+        </a>
+      </div>
+      <nav class="nav-menu">
+        <div class="nav-mobile-header">
+          <span class="primary">T</span>
+          <strong class="secondary">R</strong>
+          <i class="nav-toggle fa fa-2x fa-close" aria-hidden="true" id="toggle-close"></i>
+        </div>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <header class="site-hero">
+      <div class="small-container">
+        <div class="about">
+          <h1>
+            <span class="secondary"> Wanjiru Nganga </span>
+          </h1>
+          <p class="underline">Hi, I'm
+            Wanjiru,A result-driven Full stack software developer with aspiring progressive career.
+            I am self-driven, ambitious, innovative, analytical, a fast learner,
+           and pride myself as a true team player with good interpersonal skills.
+            I strongly believe in honesty and integrity and I am very reliable.
+          </p>
+          <p>
+            <a class="button button-secondary" href="#contact">Get in Touch</a>
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section class="section alt-bg" id="skills">
+      <header class="section-header">
+        <div class="small-container">
+          <h2>Technical Skills</h2>
+        </div>
+      </header>
+      <div class="container">
+        <div class="flex skills">
+          <div class="card">
+              <img src="{% static 'images/flask.png'%}" alt="flask Logo">
+            <h3>Flask</h3>
+          </div>
+          <div class="card">
+              <img src="{% static 'images/javascript.jpg'%}" alt="js Logo">
+            <h3>JavaScript</h3>
+          </div>
+          <div class="card">
+                <img src="{% static 'images/angular-card.png'%}" alt="angular Logo">
+            <h3>AngularJs</h3>
+          </div>
+          <div class="card">
+            <img src="{% static 'images/python.png'%}" alt="python Logo">
+                <h3>Python </h3>
+          </div>
+          <div class="card">
+              <img src="{% static 'images/git.png'%}" alt="git Logo">
+            <h3>Git</h3>
+          </div>
+          <div class="card">
+            <img src="{% static 'images/django.png'%}" alt="django Logo">
+            <h3>Django</h3>
+          </div>
+            <div class="card">
+            <img src="{% static 'images/postgresql.png'%}" alt="psql Logo">
+            <h3>Django</h3>
+          </div>
+
+            <div class="card">
+            <img src="{% static 'images/laravel.png'%}" alt="psql Logo">
+            <h3>Django</h3>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-bg" id="projects">
+      <header class="section-header">
+        <div class="small-container">
+          <h2>Projects</h2>
+          <p>Here are a few examples of my projects.</p>
+        </div>
+      </header>
+      <div class="container wrap" >
         <div class="row" id="final">
         {% for item in projects %}
              <div class="col-md-4">
@@ -54,12 +137,6 @@
                                        <p><a href="{{item.live_site}}">Live site</a></p>
 
                                 </div>
-                                <!-- <p>Technologies used</p>
-                                    <p><span class="language">
-                                    <a href="">Python</a></span></p> -->
-    
-                                <div>
-                                </div>
                             </div>
                         </div>
                         </div>
@@ -67,50 +144,13 @@
                 </div>
             </div>
         {% endfor %}
-        <hr>
-   
+      </div>
+    </section>
 
-</div>
-        <div class="cotainer m-0 portfolio-details" id="skills">
-        <div class="row">
-            <div class="col-md-10 section-heading">
-                <h4  style="color: #056b5b  ; text-align: center">Skills</h4>
-                <hr>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-6 images-details">
-                <img src="{% static 'images/python.png' %}" alt="python">
-            </div>
-            <div class="col-md-6 images-details">
-                <img src="{% static 'images/angular-card.png' %}" alt="angula">
-            </div>
-            <div class="col-md-6 images-details">
-                <img src="{% static 'images/django.png' %}" alt="django">
-            </div>
-            <div class="col-md-6 images-details">
-                <img src="{% static 'images/flask.png' %}" alt="flask">
-            </div>
-            <div class="col-md-6 images-details">
-                <img src="{% static 'images/javascript.jpg' %}" alt="javascript">
-            </div>
-            <div class="col-md-6 images-details">
-                <img src="{% static 'images/Postgresql_elephant.svg' %}" alt="javascript">
-            </div>
-        </div>
-        </div>
-<hr>
-<hr>
 
-<div class="container">
-    <div class="row text-center">
-        <div class="col-md-10">
-            <h4 class="text-center" style="color: #056b5b">Contact</h4>
-            <hr>
-            <a class="nav-item nav-link ml-auto social" href="https://github.com/wanjiiru" target="_blank"><i class="fab fa-github fa-2x" style="color: black"></i></a>
-            <a class="nav-item nav-link ml-auto social" href="https://www.linkedin.com/in/wanjiru-nganga-775181113/" target="_blank"><i class="fab fa-linkedin-in fa-2x" style="color: black"></i></a>
-            <a class="nav-item nav-link ml-auto social" href="#" target="_blank"><i class="fa fa-envelope fa-2x" style="color: black"></i>liz240@live.com</a>
-        </div>
-    </div>
-</div>
+  </main>
+
+
+
+
 {% endblock %}

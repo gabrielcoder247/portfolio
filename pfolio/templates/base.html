@@ -3,8 +3,21 @@
 {% load bootstrap4 %}
 <!DOCTYPE html> 
 <html>
-
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="online portfolio ">
+  <meta name="keywords" content="Web developer, fullstack">
+  <meta name="author" content="Liz">
+
+  <title>
+    Liz|| Portfolio </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,800" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="{% static 'css/index.css'%}" rel="stylesheet">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
@@ -18,36 +31,49 @@
     <!-- Custom Theme files -->
     <link href='//fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
-    <link rel="stylesheet" href="{% static 'leaflet/leaflet.css' %}">
-    <link rel="stylesheet" href="{% static 'css/index.css' %}"> 
     {% endblock %}
 </head>
 
 <body>
-    {% include 'navbar.html' %}
-    <div class="container-fluid">
-        <div class="row">
-            {% block content %}
-            {% endblock %}
-        </div>
+{% block content %}
+{% endblock %}
+
+    <footer class="site-footer ">
+    <div class="container" id ="contact">
+      <h3>
+        <span class="primary">Wanjiru</span>
+        <strong class="secondary">Nganga</strong>
+      </h3>
+      <p>
+        Web developer, tech writer and problem solver. I love coding, reading books, and building applications
+      </p>
+      <div class="social-icons">
+        <a href="https://twitter.com/wanjiiru_" target="_blank">
+          <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+        </a>
+        <a href="https://github.com/wanjiiru" target="_blank">
+          <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+        </a>
+        <a href="" target="_blank">
+          <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/wanjiru-nganga/" target="_blank">
+          <i class="fab fa-linkedin-square fa-2x" aria-hidden="true"></i>
+        </a>
+      </div>
     </div>
-    <div class="container wrap">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="mapid"></div>
-            </div>
-        </div>
-    </div>
+  </footer>
+
 
     {% block scripts %}
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     {% bootstrap_javascript %}
-    <script src="{% static 'leaflet/leaflet.js' %}"></script>
-    <script src="{% static 'js/plugins/leaflet.ajax.min.js' %}"></script>
-    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
+        <script src="{% static 'js/jquery.js' %}"></script>
+
     {% endblock %}
+
 </body>
 
 </html>

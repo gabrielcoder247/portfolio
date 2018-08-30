@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 # Create your models here.
 
@@ -34,8 +35,3 @@ class Project(models.Model):
 
     def save_project(self):
         self.save()
-
-
-    
-
-
